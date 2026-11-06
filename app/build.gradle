@@ -1,0 +1,34 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Read the admin address from ADMIN_URL.txt (first line that is not a comment)
+def adminUrl = rootProject.file('ADMIN_URL.txt').readLines()
+        .collect { it.trim() }
+        .find { it && !it.startsWith('#') }
+if (!adminUrl || adminUrl.contains('YOUR-DOMAIN')) {
+    throw new GradleException('Edit ADMIN_URL.txt and put your real admin page address, e.g. https://yourdomain.com/admin.php')
+}
+
+android {
+    namespace 'ug.fohowzodiac.admin'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'ug.fohowzodiac.admin'
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+        buildConfigField 'String', 'ADMIN_URL', "\"${adminUrl}\""
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

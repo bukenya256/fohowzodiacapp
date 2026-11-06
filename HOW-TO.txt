@@ -1,0 +1,15 @@
+HOW TO GET YOUR ADMIN APK
+=========================
+1. Open ADMIN_URL.txt and replace  https://YOUR-DOMAIN.com/admin.php
+   with the real address of your admin page (the one you open in Chrome).
+2. Create a new repository on github.com (Add file > Upload files) and upload
+   EVERYTHING in this folder, including the hidden ".github" folder.
+   (Easiest: unzip, then drag all the files/folders into GitHub.)
+3. Click the "Actions" tab. The "Build Android APK" job starts by itself
+   (or choose it and press "Run workflow"). Wait ~3-5 minutes for the green tick.
+4. Open the finished run, scroll to "Artifacts", download
+   "Fohow-Zodiac-Admin-APK", unzip it, and send app-debug.apk to your phone.
+5. On the phone open the APK, allow "Install unknown apps" when asked, install.
+   Tap "Zodiac Admin" - it opens your admin sign-in page directly.
+
+To change the address later: edit ADMIN_URL.txt on GitHub and commit; a new APK is built.
