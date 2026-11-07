@@ -1,0 +1,36 @@
+{
+  "name": "zodiac-admin-desktop",
+  "version": "1.0.0",
+  "description": "Fohow Zodiac Uganda - Administrator dashboard",
+  "author": "Fohow Zodiac Uganda",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "ug.fohowzodiac.admin",
+    "productName": "Zodiac Admin",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["main.js", "splash.html", "offline.html", "ADMIN_URL.txt", "assets/**"],
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Zodiac Admin",
+      "runAfterFinish": true,
+      "artifactName": "Zodiac-Admin-Setup.exe"
+    },
+    "portable": { "artifactName": "Zodiac-Admin-Portable.exe" }
+  }
+}

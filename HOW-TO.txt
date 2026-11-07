@@ -1,17 +1,21 @@
-HOW TO UPDATE YOUR ADMIN APK
-============================
-1. In your GitHub repo (fohowzodiacapp) upload/replace ALL files from this folder
-   (keep the hidden ".github" folder). ADMIN_URL.txt is already set to
-   http://fohowzodiacug.xo.je/admin.php
-2. Open the Actions tab - the build starts by itself. When it shows a green tick,
-   download the artifact "Fohow-Zodiac-Admin-APK", unzip, and install app-debug.apk
-   (uninstall the old version first if Android refuses to update).
-3. IMPORTANT: also replace admin.php on your InfinityFree site with the admin.php
-   file provided. It fixes the phone layout of the dashboard.
+HOW TO GET THE WINDOWS APP (.exe)
+=================================
+1. On github.com create a NEW repository (e.g. "zodiac-admin-windows", Private).
+2. Upload EVERYTHING from this folder (drag all files and folders in, including the
+   hidden ".github" folder). Commit.
+3. Open the Actions tab -> "Build Windows App" runs by itself (or press Run workflow).
+   It takes about 5 minutes. Wait for the green tick.
+4. Open the finished run, scroll to Artifacts, download "Zodiac-Admin-Windows", unzip:
+     Zodiac-Admin-Setup.exe     -> installs, adds a "Zodiac Admin" icon on the desktop
+     Zodiac-Admin-Portable.exe  -> runs directly, nothing to install
+5. First run on Windows may show "Windows protected your PC" (the app is not code-signed).
+   Click "More info" then "Run anyway". This is normal for apps without a paid certificate.
 
-SECURITY FEATURES
-- Opens with the big Zodiac logo, then asks for your phone PIN / pattern / fingerprint.
-- Locks again every time you leave the app (Home, Recents, another app, screen off).
-- After 5 minutes away you are also signed out of the dashboard (password needed again).
-- Screenshots, screen recording and the recent-apps preview are blocked.
-- The phone must have a screen lock set, otherwise the app will not open.
+The address is in ADMIN_URL.txt (already http://fohowzodiacug.xo.je/admin.php).
+If the address ever changes, edit that file on GitHub and a new .exe is built.
+
+SECURITY
+- Opens with the Zodiac logo screen, then the admin sign-in page.
+- If the window is minimized / not in use for 5 minutes, the admin is signed out
+  (change AUTO_SIGNOUT_MS at the top of main.js).
+- Links to other websites open in the normal browser, not inside the app.
