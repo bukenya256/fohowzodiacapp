@@ -1,3 +1,2 @@
 # Put the FULL address of your admin page on the next line (nothing else).
-# Example: https://fohowzodiac.com/admin.php
 http://fohowzodiacug.xo.je/admin.php

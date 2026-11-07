@@ -1,15 +1,17 @@
-HOW TO GET YOUR ADMIN APK
-=========================
-1. Open ADMIN_URL.txt and replace  https://YOUR-DOMAIN.com/admin.php
-   with the real address of your admin page (the one you open in Chrome).
-2. Create a new repository on github.com (Add file > Upload files) and upload
-   EVERYTHING in this folder, including the hidden ".github" folder.
-   (Easiest: unzip, then drag all the files/folders into GitHub.)
-3. Click the "Actions" tab. The "Build Android APK" job starts by itself
-   (or choose it and press "Run workflow"). Wait ~3-5 minutes for the green tick.
-4. Open the finished run, scroll to "Artifacts", download
-   "Fohow-Zodiac-Admin-APK", unzip it, and send app-debug.apk to your phone.
-5. On the phone open the APK, allow "Install unknown apps" when asked, install.
-   Tap "Zodiac Admin" - it opens your admin sign-in page directly.
+HOW TO UPDATE YOUR ADMIN APK
+============================
+1. In your GitHub repo (fohowzodiacapp) upload/replace ALL files from this folder
+   (keep the hidden ".github" folder). ADMIN_URL.txt is already set to
+   http://fohowzodiacug.xo.je/admin.php
+2. Open the Actions tab - the build starts by itself. When it shows a green tick,
+   download the artifact "Fohow-Zodiac-Admin-APK", unzip, and install app-debug.apk
+   (uninstall the old version first if Android refuses to update).
+3. IMPORTANT: also replace admin.php on your InfinityFree site with the admin.php
+   file provided. It fixes the phone layout of the dashboard.
 
-To change the address later: edit ADMIN_URL.txt on GitHub and commit; a new APK is built.
+SECURITY FEATURES
+- Opens with the big Zodiac logo, then asks for your phone PIN / pattern / fingerprint.
+- Locks again every time you leave the app (Home, Recents, another app, screen off).
+- After 5 minutes away you are also signed out of the dashboard (password needed again).
+- Screenshots, screen recording and the recent-apps preview are blocked.
+- The phone must have a screen lock set, otherwise the app will not open.
